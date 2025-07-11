@@ -16,7 +16,8 @@ function Login() {
   };
 
   return (
-    <div style={{ padding: '1rem', textAlign:'center' }}>
+    //<div style={{ padding: '1rem', textAlign:'center' }}>
+    <div className="h-screen flex items-center justify-center bg-gradient-to-br from-blue-100 to-white text-3xl font-bold">
       <h1>🔐 Login</h1>
       <form onSubmit={handleLogin}>
         <div>
