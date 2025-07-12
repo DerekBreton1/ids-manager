@@ -1,5 +1,12 @@
 import { Link } from 'react-router-dom';
 
+const token = localStorage.getItem("token");
+const res = await fetch("http://localhost:8000/protected", {
+  headers: {
+    Authorization: `Bearer ${token}`,
+  },
+});
+
 const mockCases = [
   { id: 1, title: 'Autonomous Navigation System', app_number: 'US12345678' },
   { id: 2, title: 'Solar-Powered Drone Engine', app_number: 'US87654321' },
