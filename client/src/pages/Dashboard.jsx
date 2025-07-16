@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
-import { Bars3Icon } from '@heroicons/react/24/outline';
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 
 const token = localStorage.getItem("token");
 const res = await fetch("http://localhost:8000/protected", {
@@ -8,11 +8,6 @@ const res = await fetch("http://localhost:8000/protected", {
     Authorization: `Bearer ${token}`,
   },
 });
-
-const mockCases = [
-  { id: 1, title: 'Autonomous Navigation System', app_number: 'US12345678' },
-  { id: 2, title: 'Solar-Powered Drone Engine', app_number: 'US87654321' },
-];
 
 export default function Dashboard() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -24,12 +19,11 @@ export default function Dashboard() {
         <div className="flex items-center space-x-4">
           {/* Hamburger icon (only on mobile) */}
           <button
-            className="md:hidden"
             onClick={() => setSidebarOpen(!sidebarOpen)}
             aria-label="Toggle menu"
           >
             {sidebarOpen ? (
-              <XIcon className="h-6 w-6 text-white" />
+              <XMarkIcon className="h-6 w-6 text-white" />
             ) : (
               <Bars3Icon className="h-6 w-6 text-white" />
             )}
@@ -49,7 +43,7 @@ export default function Dashboard() {
         <aside
           className={`bg-gray-100 border-r w-64 p-4 space-y-4 absolute z-20 inset-y-0 left-0 transform ${
             sidebarOpen ? 'translate-x-0' : '-translate-x-full'
-          } transition-transform duration-200 ease-in-out md:relative md:translate-x-0 md:block`}
+          } transition-transform duration-200 ease-in-out`}
         >
           <nav className="space-y-2">
             <a href="#" className="block text-sm font-medium text-gray-800 hover:text-blue-600">Dashboard</a>
