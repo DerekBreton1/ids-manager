@@ -47,10 +47,10 @@ export default function Dashboard() {
         >
           <nav className="space-y-2">
             <a href="#" className="block text-sm font-medium text-gray-800 hover:text-blue-600">Dashboard</a>
-            <a href="#" className="block text-sm text-gray-800 hover:text-blue-600">Cases</a>
+            <a href="/cases" className="block text-sm text-gray-800 hover:text-blue-600" >Cases</a>
             <a href="#" className="block text-sm text-gray-800 hover:text-blue-600">IDS Documents</a>
             <a href="#" className="block text-sm text-gray-800 hover:text-blue-600">Disclosures</a>
-            <a href="#" className="block text-sm text-gray-800 hover:text-blue-600">Settings</a>
+            <a href="/settings" className="block text-sm text-gray-800 hover:text-blue-600">Settings</a>
           </nav>
         </aside>
 
